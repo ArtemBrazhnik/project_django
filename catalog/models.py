@@ -21,7 +21,6 @@ class Product(models.Model):
     price = models.PositiveIntegerField(verbose_name='Цена за покупку')
     created_at = models.DateTimeField(verbose_name='Дата создания (записи в БД)')
     updated_at = models.DateTimeField(verbose_name='Дата последнего изменения (записи в БД)')
-    manufactured_at = models.DateTimeField(auto_now=True, verbose_name='Дата производства продукта')
 
     class Meta:
         verbose_name = 'Продукт'
