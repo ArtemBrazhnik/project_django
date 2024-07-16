@@ -19,8 +19,8 @@ class Product(models.Model):
     preview = models.ImageField(upload_to='media/', blank=True, null=True, verbose_name='Изображение (превью)')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория товара')
     price = models.PositiveIntegerField(verbose_name='Цена за покупку')
-    created_at = models.DateTimeField(verbose_name='Дата создания (записи в БД)')
-    updated_at = models.DateTimeField(verbose_name='Дата последнего изменения (записи в БД)')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания (записи в БД)')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата последнего изменения (записи в БД)')
 
     class Meta:
         verbose_name = 'Продукт'
