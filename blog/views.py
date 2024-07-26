@@ -7,7 +7,7 @@ from blog.models import Blog
 class BlogCreateView(CreateView):
     model = Blog
     fields = '__all__'
-    success_url = reverse_lazy('blog_list')
+    success_url = reverse_lazy('blog:blog_list')
 
     def form_valid(self, form):
         if form.is_valid():
@@ -39,7 +39,7 @@ class BlogDetailView(DetailView):
 class BlogUpdateView(UpdateView):
     model = Blog
     fields = '__all__'
-    success_url = reverse_lazy('blog_list')
+    success_url = reverse_lazy('blog:blog_list')
 
     def get_success_url(self):
         return reverse('blog:blog_detail', args=[self.kwargs.get('pk')])
@@ -47,7 +47,4 @@ class BlogUpdateView(UpdateView):
 
 class BlogDeleteView(DeleteView):
     model = Blog
-    success_url = reverse_lazy('blog_list')
-
-    def get_success_url(self):
-        return reverse('blog:blog_detail', args=[self.kwargs.get('pk')])
+    success_url = reverse_lazy('blog:blog_list')
